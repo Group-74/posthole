@@ -1,0 +1,127 @@
+// Colors
+.color-primary{
+    color: $accent-1 !important;
+}
+.color-sec{
+    color: $accent-2 !important;
+}
+.white{
+    color: $white !important;
+}
+.light-black{
+    color: $light-black !important;
+}
+.medium-black{
+    color: $medium-black !important;
+}
+.black{
+    color: $black !important;
+}
+.lightest-gray{
+    color: $lightest-gray !important;
+}
+.light-gray{
+    color: $light-gray !important;
+}
+.medium-gray{
+    color: $medium-gray !important;
+}
+.dark-gray{
+    color: $dark-gray !important;
+}
+.gradient-3{
+    color: $gradient-3 !important;
+}
+
+// Backgrounds Classes
+.bg-light-black{
+    background: $light-black !important;
+}
+.bg-medium-black{
+    background: $medium-black !important;
+}
+.bg-black{
+    background: $black !important;
+}
+.bg-lightest-gray{
+    background: $lightest-gray !important;
+}
+.bg-light-gray{
+    background: $light-gray !important;
+}
+.bg-medium-gray{
+    background: $medium-gray !important;
+}
+.bg-dark-gray{
+    background: $dark-gray !important;
+}
+.bg-light-black{
+    background: $light-black !important;
+}
+.bg-medium-black{
+    background: $medium-black !important;
+}
+.bg-black{
+    background: $black !important;
+}
+.bg-lightest-gray{
+    background: $lightest-gray !important;
+}
+.bg-light-gray{
+    background: $light-gray !important;
+}
+.bg-medium-gray{
+    background: $medium-gray !important;
+}
+.bg-dark-gray{
+    background: $dark-gray !important;
+}
+.bg-gradient-3{
+    background: $gradient-3 !important;
+}
+.bg-gradient{
+    background: $background-gradient !important;
+}
+.bg-gradient-2{
+    background: $background-gradient-2 !important;
+}
+
+
+// Radius 
+.br-5000{
+    border-radius: 5000px;
+}
+.br-30{
+    border-radius: 30px;
+}
+.br-25{
+    border-radius: 25px;
+}
+.br-20{
+    border-radius: 20px;
+}
+.br-15{
+    border-radius: 15px;
+}
+.br-10{
+    border-radius: 10px;
+}
+.br-5{
+    border-radius: 5px;
+}
+// Box Shadow classes
+.box-shadow{
+    box-shadow: $shadow;
+}
+
+
+
+// Mix helper classes
+.b-unstyle{
+    border: 0;
+    background: transparent;
+}
+.shadow{
+     box-shadow: $shadow !important;
+}
+

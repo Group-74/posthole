@@ -1,0 +1,71 @@
+// ------- Hero Banner -------- //
+.hero-banner {
+  background: url(../media/banner/hero-banner.png) no-repeat;
+  background-size: cover;
+
+  &.page-title-banner {
+    background: url(../media/banner/pg-st-banner.png) no-repeat;
+    display: flex;
+    justify-content: center;
+    height: 600px;
+    @include media-query(767px){
+      height: 450px;
+    }
+  }
+
+  &.page-title-banner-2 {
+    background: url(../media/banner/pg-st-banner-2.png) no-repeat;
+    display: flex;
+    justify-content: center;
+    height: 600px;
+    @include media-query(767px){
+      height: 450px;
+    }
+  }
+
+  .content {
+    height: 1018px;
+    display: grid;
+    justify-content: end;
+    align-content: center;
+    .text-block {
+      margin-right: 205px;
+      padding: 50px;
+      gap: 10px;
+      border: 2px solid rgba(255, 255, 255, 0.16);
+      background: linear-gradient(90deg, rgba(16, 16, 16, 0.00) 0%, rgba(29, 29, 29, 0.00) 100%);
+      backdrop-filter: blur(50px);
+
+      &.about {
+        height: auto;
+        margin: 0;
+        padding: 16px 64px;
+        border: 1px solid rgba(255, 255, 255, 0.16);
+        background: linear-gradient(111deg, rgba(46, 46, 46, 0.52) 14.33%, rgba(28, 28, 28, 0.61) 44.24%, rgba(55, 55, 55, 0.58) 80.06%, rgba(20, 20, 20, 0.54) 104.5%);
+      }
+
+      @include media-query(1599px) {
+        margin-right: 165px;
+      }
+
+      @include media-query(1399px) {
+        margin-right: 105px;
+        padding: 40px;
+      }
+
+      @include short-query(1199px, 768px) {
+        margin-right: 65px;
+        padding: 30px;
+      }
+
+      @include media-query(767px) {
+        margin-right: 35px;
+        padding: 20px;
+      }
+    }
+    &.content-2 {
+      height: auto;
+
+    }
+  }
+}

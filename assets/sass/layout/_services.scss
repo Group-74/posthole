@@ -1,0 +1,44 @@
+// Services
+.services{
+    .service-block{
+        padding: 24px 28px;
+        border-right: 1px solid $matte-gray;
+        transition: $transition;
+        @include media-query(1199px){
+            border-bottom: 1px solid $matte-gray;
+        }
+        .image-area{
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .text-area{
+            display: flex;
+            gap: 24px;
+            align-items: center;
+            .number{
+                padding: 10.5px 12.5px;
+                border-radius: 50%;
+                border: 1px solid $matte-gray;
+            }
+        }
+        .button{
+            text-align: end;
+        }
+        &:hover{
+            cursor: pointer;
+        }
+    }
+}
+
+// ----------- Services Detail -------------- //
+.service-detail{
+    .service-block{
+        padding: 24px;
+        .service-title{
+            display: flex;
+            align-items: center;
+            gap: 16px;
+        }
+    }
+}

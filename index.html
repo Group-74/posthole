@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+    <meta
+      name="description"
+      content="PaveGuard - We help you identify and report dangerous roads, guiding road safety officials directly to areas in need of attention."
+    />
+
+    <title>PaveGuard | Pothole Detection and Alert System</title>
+
+    <!-- Favicon -->
+    <link
+      rel="shortcut icon"
+      type="image/x-icon"
+      href="assets/media/fav-icon.png"
+    />
+
+    <!-- All CSS files -->
+    <link rel="stylesheet" href="assets/css/vendor/bootstrap.min.css" />
+    <link rel="stylesheet" href="assets/css/vendor/font-awesome.css" />
+    <link rel="stylesheet" href="assets/css/vendor/slick.css" />
+    <link rel="stylesheet" href="assets/css/vendor/slick-theme.css" />
+    <link rel="stylesheet" href="assets/css/app.css" />
+
+    <!-- Custom CSS for table styling -->
+    <style>
+      .coordinates-table {
+        width: 100%;
+        margin-top: 20px;
+        border-collapse: collapse;
+        background-color: #2c3e50;
+        color: white;
+      }
+
+      .coordinates-table th,
+      .coordinates-table td {
+        padding: 12px;
+        text-align: left;
+        border-bottom: 1px solid #ddd;
+      }
+
+      .coordinates-table th {
+        background-color: #34495e;
+      }
+
+      .coordinates-table tr:hover {
+        background-color: #34495e;
+      }
+
+      .coordinates-table a {
+        color: #3498db;
+        text-decoration: none;
+      }
+
+      .coordinates-table a:hover {
+        text-decoration: underline;
+      }
+    </style>
+  </head>
+
+  <body>
+    <!-- Preloader-->
+    <div id="preloader">
+      <div class="triangles">
+        <div class="tri invert"></div>
+        <div class="tri invert"></div>
+        <div class="tri"></div>
+        <div class="tri invert"></div>
+        <div class="tri invert"></div>
+        <div class="tri"></div>
+        <div class="tri invert"></div>
+        <div class="tri"></div>
+        <div class="tri invert"></div>
+      </div>
+    </div>
+    <!-- Back To Top Start -->
+    <a href="#main-wrapper" id="backto-top" class="back-to-top"
+      ><i class="fas fa-angle-up"></i
+    ></a>
+    <!-- Main Wrapper Start -->
+    <div id="main-wrapper" class="main-wrapper overflow-hidden">
+      <!-- Header Area Start -->
+      <header class="header-2">
+        <div class="container-fluid">
+          <nav class="navbar navbar-expand-xl">
+            <a class="navbar-brand" href="index.html"
+              ><img alt="" src="assets/pv.png" class="logp"
+            /></a>
+            <button
+              class="navbar-toggler"
+              type="button"
+              data-bs-toggle="collapse"
+              data-bs-target="#mynavbar"
+            >
+              <i class="fas fa-bars"></i>
+            </button>
+            <div class="collapse navbar-collapse text-start" id="mynavbar">
+              <ul class="navbar-nav mainmenu m-0">
+                <li class="menu-item">
+                  <a href="index.html" class="active">Home</a>
+                </li>
+              </ul>
+            </div>
+          </nav>
+        </div>
+      </header>
+      <!-- Header Area End -->
+
+      <!-- Hero banner Start -->
+      <div class="hero-banner">
+        <div class="content">
+          <div class="text-block">
+            <h1 class="h57 mb-8">
+              <span class="color-primary">Guiding</span> Safety <br />
+              To Problem areas
+            </h1>
+            <p class="font-19 light-gray mb-24">
+              We help you identify and report dangerous roads, guiding road
+              <br />safety officials directly to areas in need of attention.
+            </p>
+            <a href="" class="cus-btn">Let's see potholes</a>
+          </div>
+        </div>
+      </div>
+      <!-- Hero banner End -->
+
+      <!-- Coordinates Table Start -->
+      <div class="container mt-4">
+        <h2>Coordinates Table</h2>
+        <table id="coordinatesTable" class="coordinates-table">
+          <thead>
+            <tr>
+              <th>Latitude</th>
+              <th>Longitude</th>
+              <th>Timestamp</th>
+              <th>See Exact Location</th>
+            </tr>
+          </thead>
+          <tbody>
+            <!-- Data will be inserted here by JavaScript -->
+          </tbody>
+        </table>
+      </div>
+      <!-- Coordinates Table End -->
+
+      <!-- Footer Section Start -->
+      <footer>
+        <div class="container">
+          <p class="font-19 font-sec lightest-gray copyright-text text-center">
+            ©2024 All Rights Reserved PaveGuard
+          </p>
+        </div>
+      </footer>
+      <!-- Footer Section End -->
+    </div>
+
+    <!-- Jquery Js -->
+    <script src="assets/js/vendor/jquery-3.6.3.min.js"></script>
+    <script src="assets/js/vendor/bootstrap.min.js"></script>
+    <script src="assets/js/vendor/slick.min.js"></script>
+    <script src="assets/js/vendor/jquery-appear.js"></script>
+    <script src="assets/js/vendor/jquery-validator.js"></script>
+    <script src="assets/js/vendor/jquery.countdown.min.js"></script>
+
+    <!-- Site Scripts -->
+    <script src="assets/js/app.js"></script>
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        fetch("https://pothole-detection-delta.vercel.app/api/potholes")
+          .then((response) => {
+            if (!response.ok) {
+              throw new Error("Network response was not ok");
+            }
+            return response.json();
+          })
+          .then((data) => {
+            console.log(data); // Debugging: log data to console
+            const tbody = document.querySelector("#coordinatesTable tbody");
+            data.forEach((pothole) => {
+              const row = document.createElement("tr");
+              const latCell = document.createElement("td");
+              const lngCell = document.createElement("td");
+              const timestampCell = document.createElement("td"); // New cell for timestamp
+              const linkCell = document.createElement("td");
+              const link = document.createElement("a");
+              link.href = `https://www.google.com/maps?q=${pothole.latitude},${pothole.longitude}`;
+              link.target = "_blank";
+              link.textContent = "See exact location";
+
+              latCell.textContent = pothole.latitude;
+              lngCell.textContent = pothole.longitude;
+              timestampCell.textContent = new Date(
+                pothole.timestamp
+              ).toLocaleString(); // Format the timestamp
+              linkCell.appendChild(link);
+
+              row.appendChild(latCell);
+              row.appendChild(lngCell);
+              row.appendChild(timestampCell); // Append the timestamp cell
+              row.appendChild(linkCell);
+
+              tbody.appendChild(row);
+            });
+          })
+          .catch((error) => {
+            console.error("Error fetching data:", error);
+          });
+      });
+    </script>
+  </body>
+</html>

@@ -1,0 +1,91 @@
+// Blog Area
+.blog{
+    .blog-area{
+        .blog-text{
+            padding: 26px;
+            border-left: 1px solid $matte-gray;
+            @include media-query(1199px){
+                border-bottom: 2px solid $matte-gray;
+            }
+            
+        }
+    }
+}
+
+//-------- Blog List -------- //
+.top-row{
+    .option-search-bar{
+        display: flex;
+        justify-content: space-between;
+        align-items: baseline;
+        padding: 100px 0 32px;
+        @include media-query(768px){
+            display: block;
+            padding: 60px 0 32px;
+        }
+        .option-bar{
+            @include media-query(768px){
+                display: flex;
+                justify-items: baseline;
+                justify-content: center;
+            }
+            select{
+                background: transparent;
+                color: $white;
+                border: 0;
+                option{
+                    color: $black;
+                }
+            }
+        }
+        .search-input{
+            display: flex;
+            align-items: baseline;
+            @include media-query(768px){
+                    justify-content: center;
+                    margin-top: 24px;
+                }
+                form{
+                    position: relative;
+                    i{
+                        position: absolute;
+                        top: 16px;
+                        left: 12px;
+                        font-size: 20px;
+                        color: $light-gray;
+                    }
+                    .form-control{
+                        color: $white;
+                        padding: 12px 40px;
+                        width: 416px;
+                        border-radius: 0;
+                        @include media-query(992px){
+                            width: 300px;
+                        }
+                        @include media-query(768px){
+                            width: 350px;
+                        }
+                        border: 1px solid $matte-gray;
+                        &::placeholder{
+                            color: $matte-gray;
+                        }
+                    }
+                }
+        }
+    }
+}
+
+//-------- Blog Details -------- //
+
+.items-bar{
+    .multi-items-bar{
+        display: flex;
+        justify-content: space-between;
+        padding: 24px 32px;
+        border: 2px solid $matte-gray;
+        margin: 100px 0 32px;
+        @include media-query(499px){
+
+        }
+    }
+}

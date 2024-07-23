@@ -1,0 +1,90 @@
+// Footer Area
+footer{
+    .footer-block {
+        border: 2px solid $matte-gray;
+        .newsletter {
+            position: relative;
+            margin: 0 16px;
+            .search-input {
+                width: 100%;
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+                padding: 18px 16px 17px 16px;
+                border: 2px solid $matte-gray;
+                color: $white;
+    
+            }
+            i {
+                position: absolute;
+                top: 15px;
+                right: 1%;
+                padding: 8px;
+            }
+        }
+        .company-details{
+            display: flex;
+            align-items: flex-start;
+            justify-content: center;
+            gap: 24px;
+            padding: 0 16px;
+            @include media-query(1199px){
+                display: block;
+            }
+            @include media-query(768px){
+                display: grid;
+            }
+            .social{
+                .social-icons{
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    gap: 32px;
+                    padding: 16px 40.5px;
+                    border: 2px solid $matte-gray;
+                    @include media-query(768px){
+                        justify-content: center;
+                    }
+                    li{
+                        i{
+                            font-size: 32px;
+                            font-weight: 100;                
+                        }
+                    }
+                }
+            }
+            .contact-detail{
+                .detail-blocks{
+                    display: flex;
+                    align-items: center;
+                    flex-wrap: wrap;
+                    gap: 16px;
+                    .block{
+                        padding: 16px;
+                        border: 2px solid $matte-gray;
+                        @include media-query(1199px){
+                            width: 100%;
+                        }
+                        @include media-query(768px){
+                            width: 100%;
+                        }
+                        a,
+                        p{
+                            display: flex;
+                            justify-content: center;
+                            align-items: center;
+                            gap: 16px;
+                            i{
+                                font-size: 32px;
+                                font-weight: 100;                
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+    .copyright-text{
+        padding: 38px 0;
+    }
+}

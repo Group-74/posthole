@@ -1,0 +1,20 @@
+// Our Team Section
+.team{
+    .worker-block{
+        display: grid;
+        justify-content: center;
+        text-align: center;
+        padding: 32px 0;
+        border: 1px solid $matte-gray;
+        &.process{
+            display: block;
+            padding: 48px 0;
+        }
+        img{
+            margin-bottom: 16px;
+            &.process-img{
+                margin-bottom: 29px;
+            }
+        }
+    }
+}

@@ -1,0 +1,244 @@
+
+// Header
+header{  
+  &.header-2{
+      width: 100%;
+      position: absolute;
+      top: 0;
+      left: 0;
+      height: 100px;
+      z-index: 999;
+      background: transparent;
+      @include media-query(492px) {
+        height: 90px;
+      }
+      nav{
+        .navbar-brand{
+          img{
+            @include media-query (576px){
+              width: 80%;
+              margin: 5px 0 -10px -15px;
+            }
+          }
+        }
+        &.navbar{
+           padding: 17.5px;
+          @include media-query(767px) {
+            padding:  0 15px;
+          }
+        }
+        .navbar-nav{
+          gap: 32px;
+          @include media-query(1199px) {
+            padding-top :0px;
+          }
+          .menu-item{
+            a{
+              font-family: $font-primary;
+              font-size: 19px;
+              font-style: normal;
+              font-weight: 600;
+              line-height: 150%;
+              letter-spacing: 0.95px;
+              color: $white;
+              @include media-query(1199px) {
+                
+              }
+              &:hover{
+                color: $accent-1;
+                @include media-query(1199px) {
+                  color: $accent-1;
+                }
+              }
+              &.active{
+                color: $accent-1;
+                @include media-query(1199px) {
+                  color: $accent-1;
+                  background: transparent;
+                }
+              }
+              i{
+                font-size: 32px;
+              }
+            }
+          }
+          .menu-item-has-children {
+            position: relative;
+            margin-right: 10px;
+            a{
+              font-family: $font-primary;
+              font-size: 19px;
+              font-style: normal;
+              font-weight: 600;
+              line-height: 150%;
+              letter-spacing: 0.95px;
+              color: $white;
+              // transition: $transition;
+              &:hover{
+                color: $accent-1;
+                @include media-query(1199px) {
+                  color: $accent-1;
+                }
+              }
+              &.active{
+                color: $accent-1;
+                @include media-query(1199px) {
+                  color: $accent-1;
+                }
+              }
+            }
+            .submenu {
+              position: absolute;
+              top: 30px;
+              left: 0px;
+              background: $background-gradient;
+              // transition: $transition;
+              z-index: 99;
+              opacity: 0;
+              visibility: hidden;
+              min-width: 200px;
+              padding: 10px 20px 15px;
+              list-style: none;
+              margin: 0;
+              border-top: 3px solid $accent-1;
+              @include media-query(1199px) {
+                min-width: 200px;
+                top: 45px;
+                left: unset;
+                padding: 10px 10px 15px;
+              }
+              a {
+                &:after {
+                  display: none;
+                }
+              }
+              li {
+                margin: 0;
+                opacity: 0;
+                -webkit-transform: translateX(20px);
+                -ms-transform: translateX(20px);
+                transform: translateX(20px);
+                a {
+                  position: relative;
+                  font-weight: 400;
+                  font-size: 21px;
+                  line-height: 140%;
+                  color: $white;
+                  padding: 8px 0px;
+                  display: block;
+                  @include media-query(1199px) {
+                    font-size: 18px;
+                  }
+                  &.active {
+                    color: $accent-1;
+                  }
+                  &:hover {
+                    color: $accent-1;
+                  }
+                }
+              }
+            }
+            &:hover {
+              .submenu {
+                opacity: 1;
+                visibility: visible;
+                z-index: 9;
+                right: 0;
+                @include media-query(1199px) {
+                  right: 85px;
+                }
+                li {
+                  opacity: 1;
+                  -webkit-transform: translateX(0);
+                  -ms-transform: translateX(0);
+                  transform: translateX(0);
+                }
+              }
+            }
+          }
+        }
+      }
+      .navbar-toggler{
+        color: $white;
+        border: none;
+        outline: 0;
+        padding-top: 24px;
+        font-size: 24px;
+        &:focus{
+          box-shadow: none;
+          color: $accent-1;
+        }
+      }
+      .navbar-expand-lg,
+      .navbar-collapse {
+        justify-content: end;
+        @include media-query(992px) {
+          justify-content: center;
+          justify-content: space-between;
+        }
+      }
+      .navbar-collapse {
+        @include media-query(1199px) {
+          background: $background-gradient;
+          color: $white;
+          border-top: 3px solid $accent-1;
+          padding: 15px 24px;
+          z-index: 9999;
+          position: absolute;
+          top: 70px;
+          right: 72px;
+          width: 200px;
+        }
+        @include media-query(991px) {
+          right: 10px;
+        }
+      }
+    }
+    .search_toggle{
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      margin-left: 32px;
+      @include media-query(1199px){
+        display: none;
+      }
+      .search-btn{
+        i{
+          font-size: 20px;
+        }
+      }
+      #search-form {
+        width: 250px;
+        display: none;
+        form{
+          .input-group{
+            border-radius: 0;
+            .form-control {
+              border: 0;
+              border-bottom: 1px solid $white;
+              padding: 0 8px 8px;
+              color: $white;
+              background: transparent;
+              border-radius: 0;
+              &:focus {
+                border-bottom: 1px solid $white;
+                box-shadow: none;
+              }
+              &::placeholder {
+                color: $white;
+              }
+            }
+            button{
+              padding: 0 8px 8px 2px;
+              color: $white;
+              background: transparent;
+              border: none;
+              border-bottom: 1px solid $white;
+              border-radius: 0;
+            }
+          }
+        } 
+      }
+    }
+}
+

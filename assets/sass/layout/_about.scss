@@ -1,0 +1,19 @@
+// About Section
+.about{
+    background: url(../media/about/about-bg.png);
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    height: 923px;
+    @include media-query(992px){
+        background-position: left;
+    }
+    .text-area{
+        padding: 64px 0;
+    }
+}
+
+
+
+
+

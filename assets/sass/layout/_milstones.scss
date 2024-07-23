@@ -1,0 +1,27 @@
+// Milstones / Achievements
+.milstones{
+    .number-block{
+        padding: 24px 0;
+        border: 1px solid $matte-gray;
+        text-align: center;
+    }
+    .content-block{
+        padding: 32px 71.5px;
+        border: 1px solid $matte-gray;
+        @include media-query(1199px){
+            margin-top: 24px;
+        }
+        .block{
+            display: flex;
+            gap: 32px;
+            @include media-query(992px){
+                display: grid;
+            }
+            .down-block{
+                display: flex;
+                flex-direction: column;
+                justify-content: end;
+            }
+        }
+    }
+}

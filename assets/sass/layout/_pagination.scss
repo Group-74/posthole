@@ -1,0 +1,33 @@
+// Paginations
+
+.paginations{
+    margin: 32px 0 100px;
+    ul{
+        display: flex;
+        justify-content: center;
+        gap: 8px;
+        li{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background: $background-gradient-2;
+            border: 2px solid $matte-gray;
+            transition: $transition;
+            color: $white;
+            width: 44px;
+            height: 40px;
+            padding: 8px 0px;
+            &.active{
+                background: $accent-1;
+            }
+            &:hover{
+                background: $accent-1;
+            }
+            a{
+                &:hover{
+                    color: $white;
+                }
+            }
+        }
+    }
+}

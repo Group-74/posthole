@@ -1,0 +1,22 @@
+// Contact Section
+
+.link-block {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 24px 0;
+    border: 2px solid $matte-gray;
+    i {
+        color: $accent-1;
+        margin-bottom: 16px;
+        font-size: 32px;
+        align-items: center;
+        text-align: center;
+    }
+}
+iframe{
+    margin: 100px 0;
+    width: 100%; 
+    height: 600px;
+    border: 0;
+}

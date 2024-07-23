@@ -1,0 +1,12 @@
+
+// ------- Reviews section  -------- //
+.reviews{
+    .review-block{
+      padding: 50px 24px;
+      border: 1px solid $matte-gray;
+      .rating-stars{
+        display: flex;
+        gap: 8px;
+      }
+    }
+  }

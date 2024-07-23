@@ -1,0 +1,38 @@
+// Projects
+// nav{
+//     padding-top: 17.5px;
+    
+//   }
+  .projects{
+    .nav{
+      display: flex;
+      justify-content: center;
+      gap: 32px;
+      border: 0px;
+      @include media-query(452px){
+        gap: 16px;
+      }
+      .nav-item{
+        .nav-link{
+          background: transparent;
+          color: $white;
+          font-style: normal;
+          font-family: $font-primary;
+          font-size: 19px;
+          font-weight: 500;
+          line-height: 150%;
+          letter-spacing: 0.95px;
+          border: 0px;
+          padding: 0px;
+          &.active {
+            color: $accent-1;
+            transition: $transition;
+            border: 0px;
+          }
+          &:hover{
+            color: $accent-1;
+          }
+        }
+      }
+    }
+  }
